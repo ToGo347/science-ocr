@@ -1,6 +1,6 @@
-# science-ocr
+# Science-OCR
 
-**science-ocr** is a lightweight, ready-to-use Python package designed to extract clean, structured text from scientific papers in PDF format. It wraps a simple interface around Surya-OCR's `layout`, `text_detection`, and `text_recognition` models, while using PyMuPDF (fitz) to rasterize PDF pages into images for processing.
+**Science-OCR** is a lightweight, ready-to-use Python package designed to extract clean, structured text from scientific papers in PDF format. It wraps a simple interface around Surya-OCR's `layout`, `text_detection`, and `text_recognition` models, while using PyMuPDF (fitz) to rasterize PDF pages into images for processing.
 
 This tool is ideal for researchers, data scientists, and developers who want reliable OCR extraction from research papers—without dealing with complicated pipelines.
 
@@ -63,10 +63,26 @@ Extracts OCR text from a PDF.
 
 This hybrid pipeline is optimized for the complex layouts of scientific literature (equations, tables, multi-column layouts, etc.).
 
+## 📦 Model Weights
+
+This package uses Surya-OCR models that are mirrored on HuggingFace for reliability:
+- Mirror: `https://huggingface.co/TomasGD/surya-ocr-mirror-models-2025_05_07`
+
+Models are subject to Surya's licensing terms (see [MODEL_LICENSE](MODEL_LICENSE)).
+
 ## 🤝 Contributing
 
 Pull requests and suggestions are welcome! If you encounter any issues, please open an issue on the project's repository.
 
 ## 📄 License
 
-MIT License
+**Science-OCR** is licensed under AGPL-3.0, but depends on:
+
+- **PyMuPDF**: AGPL-3.0
+- **Surya-OCR**: Code is GPL-3.0 & Models are AI Pubs Open Rail-M license (free for research, personal use, and startups under $2M funding/revenue)
+
+**For commercial use exceeding $2M funding/revenue, you must obtain commercial licenses for the dependencies.**
+
+## Disclaimer
+
+The maintainers of Science-OCR are not responsible for ensuring your compliance with third-party licenses. It is your responsibility to review and comply with all applicable licenses for dependencies used in this project.
