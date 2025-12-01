@@ -10,5 +10,3 @@ def test_ocr():
 			score = SequenceMatcher(None, text, og_text).ratio()
 			print(dpi, score)
 			assert score > 0.9
-
-test_ocr()
