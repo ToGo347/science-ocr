@@ -47,10 +47,14 @@ class SuryaOCREngine:
 	def layout_driven_ocr(self, images):
 		# img can be numpy array, PIL, or file path
 		layout_predictions = self.layout_predictor(images)
-		ocr_predictions = self.recognition_predictor(images, task_names=["ocr_without_boxes"]*len(images), det_predictor=self.detection_predictor, math_mode=False,
-													 filter_tag_list=DEFAULT_TAGS_TO_FILTER + SuryaOCREngine.FILTER_TAGS)
-		pages_result_text = []
+		ocr_predictions = self.recognition_predictor(
+			images,
+			task_names=["ocr_without_boxes"]*len(images),
+			det_predictor=self.detection_predictor, math_mode=False,
+			filter_tag_list=DEFAULT_TAGS_TO_FILTER + SuryaOCREngine.FILTER_TAGS
+		)
 
+		pages_result_text = []
 		for page_idx in range(len(images)):
 			layout_boxes = layout_predictions[page_idx].bboxes
 			layout_boxes = list(filter(lambda lb: lb.label in SuryaOCREngine.LAYOUT_LABELS, layout_boxes))
