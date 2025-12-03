@@ -2,7 +2,7 @@ import fitz
 from PIL import Image
 
 
-def convert_from_path(pdf_path, dpi, first_page=0, last_page=None, max_width=1024):
+def convert_from_path(pdf_path, dpi, first_page=0, last_page=None):
 	images = []
 	pdf_document = fitz.open(pdf_path)
 
